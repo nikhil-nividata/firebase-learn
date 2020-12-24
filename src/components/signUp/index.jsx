@@ -53,19 +53,19 @@ const SignUp = () => {
                   <ErrorMessage name="email" />
                 </p>
 
-                <label htmlFor="password">Email</label>
+                <label htmlFor="password">Password</label>
                 <Field name="password" type="password" />
                 <p className={Styles.errorMessage}>
                   <ErrorMessage name="password" />
                 </p>
 
-                <label htmlFor="confirmPassword">Email</label>
+                <label htmlFor="confirmPassword">Confirm Password</label>
                 <Field name="confirmPassword" type="password" />
                 <p className={Styles.errorMessage}>
                   <ErrorMessage name="confirmPassword" />
                 </p>
 
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Sign Up</Button>
               </Form>
             </Formik>
           </Card>
