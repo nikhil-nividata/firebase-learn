@@ -7,7 +7,7 @@ const index = () => {
     <Navbar
       alignLinks="right"
       brand={
-        <a className="brand-logo" href="#">
+        <a className="brand-logo" href="/">
           Logo
         </a>
       }
