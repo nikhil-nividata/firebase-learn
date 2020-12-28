@@ -25,7 +25,9 @@ export default function CreatePost() {
           ...values,
           createdAt: Date.now(),
         });
-        console.log(response);
+        values.title = "";
+        values.post = "";
+        document.getElementById("modalCloseButton").click();
       } catch (error) {
         console.log(error);
       }
@@ -39,12 +41,18 @@ export default function CreatePost() {
           node="button"
           waves="green"
           onClick={() => {
-            document.getElementById("sunmitPost").click();
+            document.getElementById("submitPost").click();
           }}
         >
           Post
         </Button>,
-        <Button flat modal="close" node="button" waves="red">
+        <Button
+          flat
+          modal="close"
+          node="button"
+          waves="red"
+          id="modalCloseButton"
+        >
           Cancel
         </Button>,
       ]}
@@ -103,7 +111,7 @@ export default function CreatePost() {
           onBlur={formik.handleBlur}
           label="Post"
         ></Textarea>
-        <Button id="sunmitPost" type="submit" style={{ display: "none" }}>
+        <Button id="submitPost" type="submit" style={{ display: "none" }}>
           Post
         </Button>
       </form>
