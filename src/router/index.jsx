@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Login from "../components/login";
 import SignUp from "../components/signUp";
 import HomePage from "../components/homepage";
+import MyPosts from "../components/myPosts";
 
 const index = () => {
   return (
@@ -13,7 +14,12 @@ const index = () => {
         path="/signUp"
         render={(props) => <SignUp props={props} />}
       />
-      <Route exact path="/" render={(props) => <HomePage props={props} />} />
+      <Route exact path="/" render={(props) => <HomePage props={props} />} />\
+      <Route
+        exact
+        path="/myPosts"
+        render={(props) => <MyPosts props={props} />}
+      />
     </Switch>
   );
 };

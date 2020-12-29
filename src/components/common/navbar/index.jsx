@@ -24,6 +24,10 @@ const index = () => {
         preventScrolling: true,
       }}
     >
+      <Link style={{ fontSize: "1.6rem" }} to="/myPosts">
+        {" "}
+        My Posts{" "}
+      </Link>
       <Link style={{ fontSize: "1.6rem" }} to="/login">
         {" "}
         Login{" "}

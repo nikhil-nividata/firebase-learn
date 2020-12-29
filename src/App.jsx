@@ -11,7 +11,9 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      uid: "",
+    };
   }
 
   componentDidMount() {
@@ -21,14 +23,18 @@ class App extends Component {
   authWatch = () => {
     firebase.auth().onAuthStateChanged((user) => {
       console.log("Auth State Changed ", user);
+      this.setState({
+        uid: user.uid,
+      });
     });
   };
 
   render() {
+    const { uid } = this.state;
     return (
       <Router>
         <Navbar />
-        <Routes />
+        <Routes uid />
       </Router>
     );
   }

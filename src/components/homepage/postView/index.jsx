@@ -6,7 +6,6 @@ import "firebase/functions";
 export default function index({ posts }) {
   return (
     <div>
-      <h3 className="center-align">POSTS</h3>
       <Collapsible accordion>
         {posts.map((post) => (
           <CollapsibleItem

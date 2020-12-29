@@ -14,6 +14,10 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
+    this.loadPosts();
+  }
+
+  loadPosts = () => {
     const db = firebase.firestore();
     db.collection("posts").onSnapshot((snapshot) => {
       const posts = [];
@@ -24,7 +28,7 @@ class HomePage extends Component {
       });
       this.setState({ posts });
     });
-  }
+  };
 
   render() {
     const { posts } = this.state;
@@ -41,6 +45,8 @@ class HomePage extends Component {
             document.getElementById("createModalTrigger").click();
           }}
         ></Button>
+        <h3 className="center-align">POSTS</h3>
+
         {posts.length > 0 ? <PostView posts={posts} /> : null}
       </div>
     );
